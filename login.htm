@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      margin-top: 150px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .container label, .container input[type="text"], .container input[type="password"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .container input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      
+      // Perform authentication checks
+      // Replace the condition with your own authentication logic
+      if (username === "admin" && password === "password") {
+        // Successful login, redirect to the main page
+        window.location.href = "main-page.html";
+      } else {
+        // Invalid login, display an error message
+        alert("Invalid username or password. Please try again.");
+      }
+      
+      // Prevent the form from submitting to the server
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form onsubmit="return validateForm()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <input type="submit" value="Log in">
+    </form>
+  </div>
+</body>
+</html>
